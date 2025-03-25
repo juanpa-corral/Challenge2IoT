@@ -39,27 +39,37 @@ diseño las cuales se presentan a continuación:
 
 #### Técnicas:
 
-*   Rango del sensor ultrasónico: El sensor HC-SR04 tiene un rango de medición de 2 cm a 400 cm. Debido a las limitaciones del tamaño del recipiente en el que se efectuaron las pruebas, se mapeó el rango de la siguiente forma: Cada centímetro detectado por el sensor representaba un metro en la escala de un río real. Por lo tanto, una distancia medida de 7 cm por el sensor ultrasónico se consideró como el umbral de "Nivel Normal" (equivalente a 7 metros en el río real). Una distancia de 4 cm medida por el sensor se consideró como el umbral de "Posible Crecida" (equivalente a 10 metros en el río real). Distancias menores a 4 cm se consideraron como "Peligro". Esta escala se implementó en el código del Arduino para definir los umbrales de control. El trabajo futuro podría explorar sensores con mayor alcance para monitorear ríos más grandes o con variaciones de niveles más sutiles.
-*    Limitaciones de la pantalla LCD: La pantalla LCD 16x2 solo puede mostrar una cantidad limitada de caracteres y/o símbolos,
+*   **Rango del sensor ultrasónico:** El sensor HC-SR04 tiene un rango de medición de 2 cm a 400 cm [3]. Debido a las limitaciones del tamaño del recipiente en el que se efectuaron las pruebas, se mapeó el rango de la siguiente forma: Cada centímetro detectado por el sensor representaba un metro en la escala de un río real. Por lo tanto, una distancia medida de 7 cm por el sensor ultrasónico se consideró como el umbral de "Nivel Normal" (equivalente a 7 metros en el río real). Una distancia de 4 cm medida por el sensor se consideró como el umbral de "Posible Crecida" (equivalente a 10 metros en el río real). Distancias menores a 4 cm se consideraron como "Peligro". Esta escala se implementó en el código de la ESP32 para definir los umbrales de control.[4][5] El trabajo futuro podría explorar sensores con mayor alcance para monitorear ríos más grandes o con variaciones de niveles más sutiles.
+*    **Limitaciones de la pantalla LCD:** La pantalla LCD 16x2 solo puede mostrar una cantidad limitada de caracteres y/o símbolos,
 lo que restringe cuanta información al tiempo se pude evidenciar.
+*   **Rendimiento del servidor web embebido:** El microcontrolador ESP32 tiene recursos limitados memoria, capacidad de procesamiento, lo que impone restricciones en el número de usuarios concurrentes que pueden acceder al tablero de control y en la complejidad de la interfaz web. [1]
+*   **Conectividad WLAN:** La fiabilidad de la conexión WLAN puede verse afectada por la distancia al punto de acceso, la presencia de obstáculos y las interferencias.[6]
 
 #### Disponibilidad
-*    Solo uso de los sensores en aula de clase: Dado que los dispositivos y los sensores son parte de la universidad,
+*    **Solo uso de los sensores en aula de clase:** Dado que los dispositivos y los sensores son parte de la universidad,
 estos solo estaban disponibles en el horario de clases o un horario permitido dentro de la universidad.
 
 #### De Espacio
 
-*    Tamaño compacto: El diseño deber fácil de instalar y transportar.
+*    **Tamaño compacto:** El diseño deber fácil de instalar y transportar.
 
 #### Escalabilidad
 
-*    Expansión: Diseñado para monitorear un solo punto, pero con posibilidad de escalar a múltiples ubicaciones. Además
+*    **Expansión:** Diseñado para monitorear un solo punto, pero con posibilidad de escalar a múltiples ubicaciones. Además
 con posibilidad de incluir sensores mas precisos y con diferentes tecnologías para un rio de verdad.
 
 #### Tiempo
-*    Tiempo limitado para el desarrollo: El tiempo disponible para el desarrollo e implementación del prototipo fue
+*    **Tiempo limitado para el desarrollo:** El tiempo disponible para el desarrollo e implementación del prototipo fue
 limitado, dado que los sensores solo estaban disponibles en horario de clase o horario permitidos dentro de la universidad
 lo que requirió priorizar funcionalidades y el proceso de diseño y construcción.
+
+#### Seguridad
+
+*   **Seguridad del acceso al tablero de control:** Se deben implementar mecanismos de seguridad para restringir el acceso al tablero de control solo a usuarios autorizados (por ejemplo, mediante autenticación).
+*   **Protección de datos:** Se deben proteger los datos transmitidos entre el microcontrolador y el tablero de control para evitar su interceptación o manipulación.
+
+#### Compatibilidad:
+*   **Compatibilidad con navegadores web:** El tablero de control debe ser compatible con los navegadores web más comunes (por ejemplo, Chrome, Firefox, Safari) y con diferentes dispositivos (PC, teléfono celular).
 
 ### Arquitectura propuesta
 
@@ -248,9 +258,9 @@ Este prototipo podría estar sentando varias bases para un sistema más avanzado
 ### Referencias
 [1] J. E. Neira, «La empresa de acueducto reveló las razones por las que se están inundando las calles de Bogotá», Infobae, 15 de noviembre de 2024. Disponible en: https://www.infobae.com/colombia/2024/11/15/la-empresa-de-acueducto-[2] revelo-las-razones-por-las-que-se-estan-inundando-las-calles-de-bogota/
 www.alldatasheet.es, «ESP32 datasheet(1/60 Pages) ESPRESSIF», 32-bit MCU & 2.4 GHz Wi-Fi & BT/BLE SoCs. https://www.alldatasheet.es/html-pdf/1148023/ESPRESSIF/ESP32/564/1/ESP32.html
-Arduino. (s.f.). Getting started with Arduino Uno. Arduino. https://www.arduino.cc/en/Guide/ArduinoUno
-Handson Technology. (s.f.). HC-SR04 Ultrasonic Sensor Datasheet. Handson Technology. https://www.handsontec.com/dataspecs/HC-SR04-Ultrasonic.pdf
+[3] HC-SR04 Ultrasonic Sensor Datasheet. Handson Technology. https://www.handsontec.com/dataspecs/HC-SR04-Ultrasonic.pdf
+[4] «Informe Niveles Río Cauca del 6 de abril de 2023 Hora 5:00 p.m | Ecopedia la enciclopedia ambiental del Valle del Cauca». Disponible en: https://portal-hidroclimatologico.cvc.gov.co/content/informe-niveles-rio-cauca-del-6-de-abril-de-2023-hora-500-pm
+[5] «Precipitación: ¿Cuándo es poco y cuándo es mucho? | Eltiempo.es», Eltiempo.es, 6 de marzo de 2024. Disponible en: https://www.eltiempo.es/noticias/precipitacion-cuando-es-poco-y-cuando-es-mucho
+[6] J. Mrázek, «Testing the WiFi range of ESP32 - mind.dump()», mind.dump(), 13 de agosto de 2017. https://blog.honzamrazek.cz/2017/08/testing-the-wifi-range-of-esp32/
 «Lesson 14 Rain Detection Module — SunFounder SunFounder_SensorKit_for_RPi2  documentation». Disponible en: https://docs.sunfounder.com/projects/sensorkit-v2-pi/en/latest/lesson_14.html
 Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD). (2020). Sistemas de Alerta Temprana como elementos para la gestión del riesgo de desastres. Portal Gestión del Riesgo. https://portal.gestiondelriesgo.gov.co/Paginas/Noticias/2020/Sistemas-de-Alerta-Temprana-como-elementos-para-la-gestion-del-riesgo-de-desastres.aspx
-«Informe Niveles Río Cauca del 6 de abril de 2023 Hora 5:00 p.m | Ecopedia la enciclopedia ambiental del Valle del Cauca». Disponible en: https://portal-hidroclimatologico.cvc.gov.co/content/informe-niveles-rio-cauca-del-6-de-abril-de-2023-hora-500-pm
-«Precipitación: ¿Cuándo es poco y cuándo es mucho? | Eltiempo.es», Eltiempo.es, 6 de marzo de 2024. Disponible en: https://www.eltiempo.es/noticias/precipitacion-cuando-es-poco-y-cuando-es-mucho
