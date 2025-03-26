@@ -214,17 +214,17 @@ Cabe recalcar que para estas pruebas, el estado seguro de río está para 7 o m�
    *   Si era posible apagar el zumbador desde el tablero de control, y se verificó la respuesta del zumbador físico.
 
 ### Resultados
-| Nivel del Agua (distancia entre sensor y el agua) cm | Color del LED RGB | Zumbador             | Estado en pantalla LCD | Estado de lluvia |
-| :------------------------------------------------- | :--------------- | :------------------- | :-------------------- |:-------------------- |
-| 10                                                 | Verde            | No está sonando       | SEGURO                | SIN LLOVIZNA            |
-| 9                                                  | Verde            | No está sonando       | SEGURO                | SIN LLOVIZNA            |
-| 8                                                  | Verde            | Sonido Intermitente   | SEGURO                | SIN LLOVIZNA            |
-| 7                                                  | Verde            | Sonido Intermitente   | SEGURO                | LLOVIZNA                |
-| 6                                                  | Azul             | Sonido Intermitente   | PRECAUCION            | LLUVIOSO                |
-| 5                                                  | Azul             | Sonido Intermitente   | PRECAUCION            | LLUVIOSO                |
-| 4                                                  | Rojo             | Sonido Constante      | PELIGRO               | LLUVIOSO                |
-| 3                                                  | Rojo             | Sonido Constante      | PELIGRO               | TORMENTA                |
-| 2                                                  | Rojo             | Sonido Constante      | PELIGRO               | TORMENTA                |
+| Nivel del Agua (distancia entre sensor y el agua) cm | Color del LED RGB | Zumbador             | Estado en pantalla LCD | Estado de lluvia | Datos Históricos | Datos en Vivo    | On/Off zumbador  |
+| :------------------------------------------------- | :--------------- | :------------------- | :-------------------- |:-------------------- |:-----------------|:-----------------|:-----------------|
+| 10                                                 | Verde            | No está sonando       | SEGURO                | SIN LLOVIZNA        | SI               |        SI        |        SI        |
+| 9                                                  | Verde            | No está sonando       | SEGURO                | SIN LLOVIZNA        | SI               |        SI        |        SI        |
+| 8                                                  | Verde            | Sonido Intermitente   | SEGURO                | SIN LLOVIZNA        | SI               |        SI        |        SI        |
+| 7                                                  | Verde            | Sonido Intermitente   | SEGURO                | LLOVIZNA            | SI               |        SI        |        SI        |
+| 6                                                  | Azul             | Sonido Intermitente   | PRECAUCION            | LLUVIOSO            | SI               |        SI        |        SI        |
+| 5                                                  | Azul             | Sonido Intermitente   | PRECAUCION            | LLUVIOSO            | SI               |        SI        |        SI        |
+| 4                                                  | Rojo             | Sonido Constante      | PELIGRO               | LLUVIOSO            | SI               |        SI        |        SI        |
+| 3                                                  | Rojo             | Sonido Constante      | PELIGRO               | TORMENTA            | SI               |        SI        |        SI        |
+| 2                                                  | Rojo             | Sonido Constante      | PELIGRO               | TORMENTA            | SI               |        SI        |        SI        |
 
 ### Análisis
 Los resultados obtenidos demuestran que el prototipo es capaz de dectectar cambios en el nivel del agua debido a las precipitaciones, y alertar al usuario mediante señales visuales (LED RGB) y sonoras (zumbador).
