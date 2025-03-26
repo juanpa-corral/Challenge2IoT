@@ -85,25 +85,25 @@ lo que requirió priorizar funcionalidades y el proceso de diseño y construcci�
 ### Interfaces conexion sensores y actuadores:
 
 * **LCD 16x2:**
-    * RS pin: Arduino pin 2
-    * Enable pin: Arduino pin 3
-    * D4 pin: Arduino pin 7
-    * D5 pin: Arduino pin 8
-    * D6 pin: Arduino pin 9
-    * D7 pin: Arduino pin 10
+   *   RS pin: ESP32 pin 2
+   *   Enable pin: ESP32 pin 15
+   *   D4 pin: ESP32 pin 18
+   *   D5 pin: ESP32 pin 19
+   *   D6 pin: ESP32 pin 21
+   *   D7 pin: ESP32 pin 22
 * **Sensor ultrasónico (HC-SR04):**
-    * TRIG pin: Arduino pin 13
-    * ECHO pin: Arduino pin 12
+   *   TRIG pin: ESP32 pin 13
+   *   ECHO pin: ESP32 pin 12
 * **LED (Verde):**
-    * Pin del LED: Arduino pin 6
+   * Pin del LED: ESP32 pin 14
 * **LED (Rojo):**
-    * Pin del LED: Arduino pin 5
+   * Pin del LED: ESP32 pin 5
 * **LED (Azul):**
-    * Pin del LED: Arduino pin 4
+   * Pin del LED: ESP32 pin 4
 * **Zumbador:**
-    * Pin del zumbador: Arduino pin 11
+   *   Pin del zumbador: ESP32 pin 23
 * **Sensor de lluvia (SunFounder):**
-    * Pin analógico: Arduino pin A0
+   *   Pin analógico: ESP32 pin 32
 
 ### Desarrollo teórico modular
 Para construir el prototipo, se adoptó un enfoque modular, estructurando el sistema en componentes con funciones específicas para facilitar su diseño y funcionamiento.
@@ -143,12 +143,19 @@ Este tipo de diseño modular le permite a cada componente cumplir una función e
 
 ![Diagrama UML](UMLDiagrams/UMLCompleteSystem.png)
 
-
-
 ### Esquemático de Hardware
 
 ![Esquematico de Hardware](/Anexos/SchematicHardware/Schematic.jpg)
 
+En la sección de Esquemático de Hardware, se utiliza el esquemático del proyecto anterior como referencia, debido a que el software utilizado para su creación no dispone del microcontrolador ESP32 en su biblioteca de componentes. Sin embargo, la conexión de los sensores y actuadores es esencialmente la misma, con la diferencia de que el ESP32 se utiliza en lugar del Arduino Uno. La siguiente tabla resume las principales diferencias:
+
+| Componente        | Proyecto Original (Arduino Uno) | Proyecto Actual (ESP32) |
+| ----------------- | ------------------------------- | ----------------------- |
+| Microcontrolador  | Arduino Uno                     | ESP32 DevKitC           |
+| Conexión WiFi     | No incluido                     | Integrado               |
+| P pines           | Diferentes pines (descritos en la seccion Interfaces conexion sensores y actuadores)               | Diferentes pines     (descritos en la seccion Interfaces conexion sensores y actuadores)    |
+
+Es importante tener en cuenta que, a pesar de estas diferencias, la lógica de conexión de los sensores (ultrasónico y de lluvia), la pantalla LCD, el LED RGB y el zumbador se mantiene sin cambios significativos. El ESP32, al igual que el Arduino Uno, permite la lectura de los sensores, el control de los actuadores y la visualización de la información en la pantalla LCD. La principal ventaja del ESP32 es su capacidad integrada para conectarse a redes WiFi, lo que permite la transmisión de datos a la interfaz web.
 ### Estándares de diseño de ingeniería aplicados
 
 El diseño de este prototipo de sistema de alerta temprana se basó en los siguientes estándares y principios de diseño de ingeniería:
