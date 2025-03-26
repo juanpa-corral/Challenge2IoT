@@ -169,7 +169,7 @@ Se establecieron los siguientes criterios de diseño para guiar el desarrollo y 
 
 *   Precisión en la detección del nivel de agua: El sistema debe medir con precisión la distancia entre el sensor y el nivel del agua.
 *   Fiabilidad en la generación de alertas: El sistema debe generar alertas de forma fiable (visual y audible) cuando el nivel del agua alcanza umbrales predefinidos.
-*   Claridad en la visualización de la información: La pantalla LCD debe mostrar la información de forma clara y concisa, comprensible para los usuarios.
+*   Claridad en la visualización de la información: La pantalla LCD debe mostrar la información de forma clara y concisa, comprensible para los usuarios. El tablero de control web debe presentar la información de manera organizada e intuitiva, permitiendo a los usuarios monitorear el nivel del agua y el estado del sistema de forma remota.
 *   Rentabilidad: El sistema debe diseñarse utilizando componentes fácilmente disponibles y asequibles.
 *   Facilidad de montaje: El sistema debe ser relativamente fácil de montar y mantener.
 
@@ -180,7 +180,7 @@ Las pruebas se llevaron a cabo en el laboratorio de electrónica de la Universid
 Para la realización de las pruebas, se utilizaron los siguientes equipos y materiales:
 *    Sensor ultrasónico HC-SR04
 *    Sensor de lluvia SunFounder
-*    Arduino Uno
+*    ESP32
 *    Jumpers
 *    Protoboard
 *    LED RGB
@@ -188,15 +188,23 @@ Para la realización de las pruebas, se utilizaron los siguientes equipos y mate
 *    Resistencias de 1k y 220 ohmnios
 *    Termo y envase (Utilizados para simular la lluvia)
 *    Recipiente plástico (Utilizado para simular un río)
+*    Computadora para acceder al tablero de control
 
 Cabe recalcar que para estas pruebas, el estado seguro de río está para 7 o más centímetros de distancia del sensor, el estado de precaución está entre 6 y 5 centímetros de distancia y por el último el estado de peligro es para menos de 5 centímetros. Y Para el sensor hay 4 estados, sin llovisna, llovisna, lluvioso y tormenta.
 
 ### Procedimiento
 1.  Montaje del prototipo: Se conectaron todos los componentes (sensores, Arduino, LED RGB, zumbador) en la protoboard siguiendo el esquemático de hardware.
 2.  Carga del programa: Se cargo el programa Arduino a través del puerto USB y con la laptop.
-3.  Preparación del entorno: Se llenó el recipiente plástico con agua hasta un nivel inicial considerado seguro. Se midió la distancia entre el sensor ultrasónico y el nivel del agua, resgitrando el valor como punto de referencia.
-4.  Simulación de lluvia: Utilizando el termo y el envase, se vertió agua de forma gradual en el recipiente para simular de esta manera la lluvia y aumentar el nivel del agua, para así observar los cambios de estado del sistema.
-5.  Observación y registro: Se observó el comportamiento del LED RGB y el zumbador a medida que el nivel del agua se elevaba. Al mismo tiempo, la LCD brindó la información correcta. Se regisrtró la distancia medida por el sensor ultrasónico en el que se producian las transiciones entre los estados (seguro, precaución y peligro).
+3.  Conexion a la red WiFi: Se conectó el ESP32 a la red WiFi local.
+4.  Preparación del entorno: Se llenó el recipiente plástico con agua hasta un nivel inicial considerado seguro. Se midió la distancia entre el sensor ultrasónico y el nivel del agua, resgitrando el valor como punto de referencia.
+5.  Simulación de lluvia: Utilizando el termo y el envase, se vertió agua de forma gradual en el recipiente para simular de esta manera la lluvia y aumentar el nivel del agua, para así observar los cambios de estado del sistema.
+6.  Observación:
+   *   Se observó el comportamiento del LED RGB y el zumbador a medida que el nivel del agua se elevaba.
+
+   *   Se verificó la información mostrada en la pantalla LCD.
+
+   *   Se accedió al tablero de control web a través de un navegador para monitorear los datos del sensor y el estado del sistema de forma remota.
+7. Registro de datos: Se registró la distancia medida por el sensor ultrasónico en el que se producían las transiciones entre los estados (seguro, precaución y peligro). Y ademas si el tablero mostraba los datos historicos correctamente y mostraba los datos en vivo. Ademas si se podia apagar el zumbador desde el tablero de control.
 
 ### Resultados
 | Nivel del Agua (distancia entre sensor y el agua) cm | Color del LED RGB | Zumbador             | Estado en pantalla LCD | Estado de lluvia |
