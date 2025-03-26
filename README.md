@@ -149,7 +149,19 @@ Este tipo de diseño modular le permite a cada componente cumplir una función e
 ![Esquematico de Hardware](/Anexos/SchematicHardware/Schematic.jpg)
 
 ### Estándares de diseño de ingeniería aplicados
-El diseño priorizó la facilidad de uso y la comprensión del sistema, tanto para los usuarios que interactúan con el prototipo como para las personas que reciben las alertas. Se aplicaron principios de diseño centrados en el ser humano para garantizar una visualización de información clara y concisa y alertas perceptibles en diferentes entornos. Por ejemplo, el LED es visible de noche, mientras que el zumbador proporciona una alerta audible durante el día cuando el LED puede no ser fácilmente visible. Se utilizaron principios de modularidad en el diseño del software para mejorar el mantenimiento. Se aplicaron los estándares de (ISO 9241-210) que trata sobre el diseño centrado en el humano, el cual fue tomado en cuenta al momento de realizar la interfaz de usuario, es decir, las alertas visuales y auditivas, y lo que se muestra en la pantalla LCD.
+
+El diseño de este prototipo de sistema de alerta temprana se basó en los siguientes estándares y principios de diseño de ingeniería:
+
+*    **Diseño Centrado en el Humano (ISO 9241-210):** Se aplicaron los principios de esta norma para asegurar que el sistema fuera fácil de usar y comprender para los usuarios finales. Esto se manifestó en:
+1. Visualización clara y concisa de la información tanto en la pantalla LCD como en el tablero de control web, mostrando el nivel del agua y el estado del sistema de manera que se pueda entender rápidamente.
+
+2. Alertas visuales y auditivas diseñadas para ser perceptibles en diferentes entornos. El LED RGB proporciona una alerta visual que es fácilmente visible tanto de día como de noche, mientras que el zumbador emite una alerta audible que es claramente audible incluso durante el día.
+
+3. Diseño intuitivo del tablero de control, que permite a los usuarios acceder a la información relevante y controlar el sistema de forma sencilla.
+
+*   **Diseño Modular:** El sistema se estructuró en módulos independientes para mejorar la mantenibilidad, la escalabilidad y la reutilización del código. Cada módulo (sensor de lluvia, sensor ultrasónico, alarma, pantalla LCD, servidor web) tiene una función específica y bien definida, lo que facilita la identificación y corrección de errores, así como la adición de nuevas funcionalidades en el futuro.
+
+*   **Confiabilidad y Robustez:** Se seleccionaron componentes y técnicas de medición confiables para garantizar que el sistema funcione de manera precisa y consistente en diferentes condiciones. Por ejemplo, el sensor ultrasónico HC-SR04 es conocido por su precisión en la medición de distancias, y el uso de un microcontrolador ESP32 proporciona una plataforma robusta para el procesamiento de datos y la comunicación.
 
 ###   Criterios de diseño establecidos
 
