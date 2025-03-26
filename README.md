@@ -355,6 +355,26 @@ Objetivos: Probar el montaje del circuito y la lectura de los sensores. Implemen
 
 Objetivos: Integrar todos los componentes y funcionalidades del sistema. Realizar pruebas exhaustivas del prototipo. Preparar la documentación final y la presentación del proyecto.
 
+### Anexos
+
+#### Interfaz Web
+
+![Interfaz Web](Anexos/InterfazWeb.jpg)
+
+#### Prototipo Físico
+
+![Prototipo Físico](Anexos/System.jpg)
+
+#### Codigo
+
+![Codigo](Anexos/IoTSystemCode/IoTSystemCode2.ino/IoTSystemCode2.ino.ino)
+
+### Video Demostrativo
+
+![Video demostrativo 1](DemostrativeVideo.mp4)
+
+![Video demostrativo 2](DemostrativeVideo2.mp4)
+
 ### Referencias
 [1] J. E. Neira, «La empresa de acueducto reveló las razones por las que se están inundando las calles de Bogotá», Infobae, 15 de noviembre de 2024. Disponible en: https://www.infobae.com/colombia/2024/11/15/la-empresa-de-acueducto-revelo-las-razones-por-las-que-se-estan-inundando-las-calles-de-bogota/
 
