@@ -204,7 +204,13 @@ Cabe recalcar que para estas pruebas, el estado seguro de río está para 7 o m�
    *   Se verificó la información mostrada en la pantalla LCD.
 
    *   Se accedió al tablero de control web a través de un navegador para monitorear los datos del sensor y el estado del sistema de forma remota.
-7. Registro de datos: Se registró la distancia medida por el sensor ultrasónico en el que se producían las transiciones entre los estados (seguro, precaución y peligro). Y ademas si el tablero mostraba los datos historicos correctamente y mostraba los datos en vivo. Ademas si se podia apagar el zumbador desde el tablero de control.
+7. Registro de datos: Se registró la distancia medida por el sensor ultrasónico en el que se producían las transiciones entre los estados (seguro, precaución y peligro). Además, se verificó lo siguiente en el tablero de control:
+
+   *   Si el tablero mostraba los datos históricos correctamente.
+
+   *   Si el tablero mostraba los datos en vivo de forma precisa.
+
+   *   Si era posible apagar el zumbador desde el tablero de control, y se verificó la respuesta del zumbador físico.
 
 ### Resultados
 | Nivel del Agua (distancia entre sensor y el agua) cm | Color del LED RGB | Zumbador             | Estado en pantalla LCD | Estado de lluvia |
