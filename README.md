@@ -239,29 +239,32 @@ Es importante recalcar que después de diversas pruebas es recomendable realizar
 
 ## Autoevaluación del protocolo de pruebas
 ### Evaluación de la efectividad del protocolo
-* ¿El protocolo permitió validar correctamente el funcionamiento del prototipo? Sí, el protocolo de pruebas implementado permitió validar de manera efectiva el funcionamiento básico del prototipo. Se realizaron pruebas en distintos escenarios de nivel de agua, permitiendo observar como el sistema respondía mediante el LED RGB, el zumbador y la pantalla LCD. Los resultados confirmaron que el prototipo dertecta cambios en el nivel del agua y alerta in situ de acuerdo a los umbrales establecidos.
-* ¿Se identificaron todos los posibles escenarios de uso? Aunque el protocolo permitió evaluar el funcionamiento general, no se consideraron todas las situaciones que podrían pasar en un entorno real. Por ejemplo, las pruebas se realizaron en un ambiente controlado y no se simularon condiciones climáticas extremas como lluvia intensa o ventiscas, oleaje en el río entre otras, que podrían afectar el rendimiento del sensor de lluvio o la precisión del sensor ultrasónico. Tampoco se evaluarion escenarios deonde el nivel del agua desciende abruptamente o fluctúa de manera irregular.
+* ¿El protocolo permitió validar correctamente el funcionamiento del prototipo? Sí, el protocolo de pruebas implementado permitió validar de manera efectiva el funcionamiento básico del prototipo, incluyendo la operación del tablero de control web. Se realizaron pruebas en distintos escenarios de nivel de agua y lluvia, permitiendo observar cómo el sistema respondía a través del LED RGB, el zumbador, la pantalla LCD y el tablero de control. Los resultados confirmaron que el prototipo detecta cambios en el nivel del agua y alerta de acuerdo a los umbrales establecidos, mostrando la información tanto localmente en la LCD como remotamente en el tablero de control.
+* ¿Se identificaron todos los posibles escenarios de uso? Aunque el protocolo permitió evaluar el funcionamiento general, no se consideraron todas las situaciones que podrían ocurrir en un entorno real. Por ejemplo, las pruebas se realizaron en un ambiente controlado y no se simularon condiciones climáticas extremas como lluvia intensa o fuertes vientos, que podrían afectar el rendimiento del sensor de lluvia o la precisión del sensor ultrasónico. Tampoco se evaluaron escenarios donde el nivel del agua desciende abruptamente o fluctúa de manera irregular, o fallos en la conexión WiFi.
 
 ### Posibles mejoras al protocolo de pruebas
 Para tener una evaluación más completa del prototipo, sería recomendable incluir las siguientes pruebas:
 
-*    Pruebas en condiciones climáticas reales: Evaluar el desempeño del sistema en exteriores bajo lluvia real para verificar la fiabilidad del sensor de lluvia y la resistencia del prototipo a factores ambientales.
-*    Pruebas con distintas intesidades de lluvia: Utilizar un pluviómetro para medir la cantidad de la lluvia y analizar su impacto en la detección del nivel del agua.
-*    Pruebas con variaciones rápidas del nivel del agua: Simular situaciones en las que el agua sube o baja rapidamente para verificar que tan bien responde el sistema a variaciones repentinas.
-*    Pruebas de duración: Dejar el prototipo funcionando de manera continua por varios días para detectar posbiles fallos a largo plazo y evaluar su confiabilidad.
-
+*    **Pruebas en condiciones climáticas reales:** Evaluar el desempeño del sistema en exteriores bajo lluvia real para verificar la fiabilidad del sensor de lluvia y la resistencia del prototipo a factores ambientales.
+*    **Pruebas con distintas intesidades de lluvia:** Utilizar un pluviómetro para medir la cantidad de la lluvia y analizar su impacto en la detección del nivel del agua.
+*    **Pruebas con variaciones rápidas del nivel del agua:** Simular situaciones en las que el agua sube o baja rapidamente para verificar que tan bien responde el sistema a variaciones repentinas.
+*    **Pruebas de duración:** Dejar el prototipo funcionando de manera continua por varios días para detectar posbiles fallos a largo plazo y evaluar su confiabilidad.
+*    **Pruebas de conectividad:** Evaluar el funcionamiento del sistema con diferentes calidades de conexión WiFi y en situaciones de pérdida temporal de la conexión.
+*   **Pruebas de carga del servidor web**: Simular el acceso simultáneo de varios usuarios al tablero de control para evaluar el rendimiento del servidor web del ESP32.
 ## Conclusiones retos presentados durante el desarrollo del proyecto, trabajo futuro y referencias.
 
 ### Conclusiones
 
-El desarrollo de este prototipo de sistema IoT para la detección temprana de crecidas de ríos permitió demostrar la viabilidad de utilizar sensores y Arduino en la prevención de desastres naturales. A través de la implementación del sensor ultrasónico y a el sensor de lluvia SunFpunder, fue posible monitorear en tiempo real en nivel del agua y generar alertas visuales y sonoras en caso de peligro.
+El desarrollo de este prototipo de sistema IoT para la detección temprana de crecidas de ríos permitió demostrar la viabilidad de utilizar sensores y un ESP32 en la prevención de desastres naturales. A través de la implementación del sensor ultrasónico y a el sensor de lluvia SunFpunder, fue posible monitorear en tiempo real en nivel del agua y generar alertas visuales y sonoras en caso de peligro,  y proporcionando una interfaz web para el acceso remoto a los datos.
 
 Entre los principales logros del proyecto se destacan:
 
-*  La correcta integración de los sensores con el Arduino uno, logrando un monitoreo eficiente.
-*  La implementación de una señal de alerta clara y perceptible mediante un LED RGB y un zumbador.
-*  La visualización en tiempo real de los datos en la pantalla LCD 16x2 proporcionando información accesible sobre el estado del sistema.
+*   La correcta integración de los sensores con el ESP32, logrando un monitoreo eficiente y la transmisión de datos a través de WiFi.
+*  La implementación de una señal de alerta clara y perceptible mediante un LED RGB y un zumbador,  con control local y remoto a través de la interfaz web.
+*  La visualización de datos en tiempo real tanto en una pantalla LCD 16x2 local como en un tablero de control web accesible a través de la red, proporcionando información completa sobre el estado del sistema.
 *  Un diseño modular que permite futuras mejoras y adaptaciones para su implementación en escenario reales.
+*  El desarrollo de un servidor web embebido en el ESP32 para la transmisión de datos y el control del sistema a través de una red WiFi.
+*  El diseño y la implementación de un tablero de control web intuitivo para la visualización remota de datos y el control del zumbador.
 
 Este proyecto es un primer paso en la dirección correcta hacia el desarrollo de sistemas de alerta temprana accesibles y económicos. La implementación de este tipo de tecnologías prodría reducir significativamente los impactos de las inundaciones, protegiendo tanto a la población como a la infraestructura.
 
@@ -273,7 +276,9 @@ A lo largo del desarrollo del prototipo, se enfrentaron diversos desafíos:
 *    Limitaciones en el tiempo de desarrollo
 *    Condiciones controladas
 *    Espacio reducido
-*    Interfaz limita
+*    Interfaz limitada
+*    Conectividad WiFi
+*    Rendimiento del servidor web
 
 ### Trabajo futuro
 Este prototipo podría estar sentando varias bases para un sistema más avanzado que pude ser implementado en ríos reales. Alguna mejoras futuras podrían ser:
@@ -282,6 +287,9 @@ Este prototipo podría estar sentando varias bases para un sistema más avanzado
 *    Autonomía energética y sostenibilidad: Implementar un sistema completo de paneles solaras para garantizar el funcionamiento continuo del sistema en ubicaciones remotas.
 *    Resistencia a condiciones ambientales: Diseñar una carcasa empermeable y resistente para que de esta manera se puedan proteger los componentes electrónicos de condiciones adversas.
 *    Alcance: Hacer posible el despliegue de varias unidades en diferentes ubicaciones para obtener una red de monitoreo más sofisticada.
+*    Integración de datos de otras fuentes: Combinar los datos del sistema con información de otras fuentes, como pronósticos meteorológicos y mapas de riesgo de inundación, para mejorar la precisión de las predicciones y proporcionar alertas más tempranas y confiables.
+*    Interfaz de usuario mejorada: Desarrollar una interfaz de usuario más completa y fácil de usar, con visualizaciones de datos interactivas, mapas y opciones de configuración avanzadas
+*    Sistema de alerta a la comunidad: Implementar un sistema de alerta a la comunidad que envíe notificaciones automáticas a los residentes en riesgo a través de múltiples canales (SMS, aplicaciones móviles, altavoces públicos).
 
 ### Referencias
 [1] J. E. Neira, «La empresa de acueducto reveló las razones por las que se están inundando las calles de Bogotá», Infobae, 15 de noviembre de 2024. Disponible en: https://www.infobae.com/colombia/2024/11/15/la-empresa-de-acueducto-[2] revelo-las-razones-por-las-que-se-estan-inundando-las-calles-de-bogota/
