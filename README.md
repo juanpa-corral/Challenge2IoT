@@ -28,8 +28,9 @@ Este documento técnico describe el diseño, desarrollo, implementación y valid
 *    Sección 3: Configuración experimental, resultados y análisis. Se describe el entorno de prueba incluyendo la configuración para probar el acceso y funcionamiento del tablero de control desde diferentes dispositivos, los resultados obtenidos y el análisis de los datos recopilados.
 *    Sección 4: Autoevaluación del protocolo de pruebas. Se evalúa la efectividad del protocolo de pruebas implementado y se propones posibles mejoras.
 *    Sección 5: Conclusiones, retos, trabajo futuro y referencias. Se resumen los principales logros del proyecto, los desafíos enfrentados durante su desarrollo, las oportunidades de mejora y las referencias bibliográficas utilizadas.
-*    Sección 6: Anexos. Se incluyen el código fuente, los esquematicos del sistema y otro material complementario.
-*    Sección 7: Video demostrativo. Se presenta un video explicativo que muestra el funcionamiento del prototipo en acción.
+*    Sección 6: Actas de Reuniones y Definición de Roles
+*    Sección 7: Anexos. Se incluyen el código fuente, los esquematicos del sistema y otro material complementario.
+*    Sección 8: Video demostrativo. Se presenta un video explicativo que muestra el funcionamiento del prototipo en acción.
 
 
 ## 2. Solución Propuesta
@@ -290,6 +291,62 @@ Este prototipo podría estar sentando varias bases para un sistema más avanzado
 *    Integración de datos de otras fuentes: Combinar los datos del sistema con información de otras fuentes, como pronósticos meteorológicos y mapas de riesgo de inundación, para mejorar la precisión de las predicciones y proporcionar alertas más tempranas y confiables.
 *    Interfaz de usuario mejorada: Desarrollar una interfaz de usuario más completa y fácil de usar, con visualizaciones de datos interactivas, mapas y opciones de configuración avanzadas
 *    Sistema de alerta a la comunidad: Implementar un sistema de alerta a la comunidad que envíe notificaciones automáticas a los residentes en riesgo a través de múltiples canales (SMS, aplicaciones móviles, altavoces públicos).
+
+### Actas de Reuniones y Definición de Roles
+
+#### Integrantes:
+
+*   Juan Esteban Ocampo
+*   Juan Pablo Corral
+
+#### Definición de Roles
+
+##### Juan Esteban Ocampo:
+
+*   Conexión física de componentes electrónicos (sensores, actuadores, ESP32)
+*   Programación del ESP32 para la adquisición de datos de los sensores y control de actuadores
+*   Configuración de la comunicación entre el ESP32 y la interfaz web
+
+##### Juan Pablo Corral:
+
+*   Documentación del proyecto (informes, diagramas, etc.)
+*   Diseño y programación de la interfaz web (tablero de control) para visualización de datos y control del sistema
+
+#### Actas de Reuniones
+
+##### Reunión 1
+
+*   Fecha: Miércoles, 19 de marzo de 2025
+*   Hora: 9:00 - 12:00
+*   Lugar: Laboratoria del B
+
+Objetivos:Definir el alcance del proyecto y los objetivos específicos. Distribuir las tareas y responsabilidades entre los integrantes. Empezar cada integrante con su rol.
+
+Temas tratados: Revisión de la descripción del proyecto y los requisitos del sistema. Discusión sobre las tecnologías a utilizar (ESP32, sensores, etc.). Acuerdo sobre la estructura modular del sistema. Asignación de tareas: Juan Esteban se encargará del hardware y la programación del ESP32, Juan Pablo de la documentación y la interfaz web.
+
+##### Reunión 2
+
+*   Fecha: Sábado, 22 de marzo de 2025
+*   Hora: 10:00 - 12:00
+*   Lugar: Videoconferencia (Teams)
+
+Objetivos: Revisar el avance en la adquisición de componentes y el diseño del circuito. Discutir el diseño de la interfaz web y la comunicación con el ESP32. Resolver dudas y problemas técnicos.
+
+##### Reunión 3
+
+*   Fecha: Lunes, 24 de marzo de 2025
+*   Hora: 15:00 - 20:00
+*   Lugar: Casa de Juanes
+
+Objetivos: Probar el montaje del circuito y la lectura de los sensores. Implementar la comunicación entre el ESP32 y la interfaz web. Ajustar el diseño de la interfaz web según los datos recibidos.
+
+##### Reunión 4
+
+*   Fecha: Martes, 25 de marzo de 2025
+*   Hora: 10:00 - 13:00
+*   Lugar: Videoconferencia (Teams)
+
+Objetivos: Integrar todos los componentes y funcionalidades del sistema. Realizar pruebas exhaustivas del prototipo. Preparar la documentación final y la presentación del proyecto.
 
 ### Referencias
 [1] J. E. Neira, «La empresa de acueducto reveló las razones por las que se están inundando las calles de Bogotá», Infobae, 15 de noviembre de 2024. Disponible en: https://www.infobae.com/colombia/2024/11/15/la-empresa-de-acueducto-[2] revelo-las-razones-por-las-que-se-estan-inundando-las-calles-de-bogota/
